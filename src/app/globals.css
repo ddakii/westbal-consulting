@@ -11,7 +11,7 @@
   --color-gold: #c9a227;
   --color-success: #10b981;
   --font-body: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-playfair), "Playfair Display", ui-serif, serif;
+  --font-heading: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-ui: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-numbers: var(--font-space), "Space Grotesk", ui-sans-serif, sans-serif;
   --radius-xl: 1.25rem;
@@ -77,19 +77,19 @@ select {
   @apply mx-auto max-w-7xl;
 }
 
-/* Headings — color inherited (use text-white on dark sections) */
+/* Tituj — Manrope bold (sans-serif modern, JO serif) */
 .heading-xl {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  @apply text-[2.25rem] leading-[1.1] sm:text-5xl lg:text-[3.375rem] lg:leading-[1.08];
+  font-family: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  @apply text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.375rem] lg:leading-[1.06];
 }
 
 .heading-lg {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  @apply text-3xl leading-[1.15] md:text-4xl md:leading-[1.12];
+  font-family: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  @apply text-3xl leading-[1.12] md:text-4xl md:leading-[1.1];
 }
 
 .heading-md {
@@ -189,9 +189,9 @@ select {
 }
 
 .page-prose h1 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-family: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
   @apply mb-6 text-3xl text-[#0F172A] md:text-4xl;
 }
 
