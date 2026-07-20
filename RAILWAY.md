@@ -36,8 +36,11 @@ ADMIN_EMAIL=...
 ADMIN_PASSWORD=...
 ```
 
-3. Deploy uses `railway.json` → `npm run build:railway` (migrate + build)
-4. Generate domain: Settings → Networking → Public URL
+3. Deploy uses `railway.json`:
+   - **Build:** `npm run build:railway` (`prisma generate` + `next build`)
+   - **Start:** `npm run start:railway` (`prisma migrate deploy` + `next start`)
+4. Link PostgreSQL to the web service so `DATABASE_URL` is set at **runtime** (required for migrate on start).
+5. Generate domain: Settings → Networking → Public URL
 
 ## 3. Seed database (once)
 
@@ -75,9 +78,9 @@ CORS_ALLOWED_ORIGINS=https://YOUR.netlify.app
 npm run db:migrate      # production migrations (Railway)
 npm run db:migrate:dev  # local dev new migration
 npm run db:seed         # seed PostgreSQL
-npm run build:railway   # Railway build
-npm run build:netlify   # Netlify build
-npm start               # production server (Railway)
+npm run build:railway   # Railway build (no migrate)
+npm run start:railway   # migrate + start (production)
+npm start               # local production server only
 ```
 
 ## All-in-one on Railway (optional)
