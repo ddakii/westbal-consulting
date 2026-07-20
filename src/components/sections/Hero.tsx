@@ -22,7 +22,10 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
     return () => window.clearInterval(id);
   }, [value]);
   return (
-    <span style={{ fontFamily: "var(--font-space)" }} className="text-3xl font-semibold text-white md:text-4xl">
+    <span
+      style={{ fontFamily: "var(--font-numbers)" }}
+      className="text-3xl font-semibold text-white md:text-4xl"
+    >
       {count}
       {suffix}
     </span>
@@ -45,25 +48,28 @@ export function Hero({
           fill
           priority
           unoptimized={heroImageSrc.startsWith("/images/")}
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/85 via-[#0F172A]/55 to-[#2563EB]/35" />
+        <div className="hero-overlay-base" aria-hidden />
+        <div className="hero-overlay-scrim" aria-hidden />
       </div>
 
       <div className="container-luxury relative z-10 flex min-h-[100svh] flex-col justify-center px-5 pb-24 pt-32 sm:px-8 lg:px-12">
-        <div className="max-w-3xl">
+        <div className="relative max-w-3xl">
           <Reveal>
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
               <span className="h-2 w-2 rounded-full bg-[#10B981]" />
               Konsultim relokimi · Gjermani
             </p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="heading-xl text-white drop-shadow-sm">{settings.heroHeadline}</h1>
+            <h1 className="heading-xl hero-text">{settings.heroHeadline}</h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="body-lg mt-6 max-w-2xl text-white/85">{settings.heroSubtitle}</p>
+            <p className="body-lg mt-6 max-w-2xl !text-base md:!text-lg hero-subtitle">
+              {settings.heroSubtitle}
+            </p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -71,7 +77,7 @@ export function Hero({
                 {settings.primaryCtaLabel}
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#kontakt" className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white hover:text-[#0F172A]">
+              <a href="#kontakt" className="btn-secondary-hero">
                 Na Kontakto
               </a>
             </div>
@@ -85,10 +91,14 @@ export function Hero({
             { label: "Partnerë në Gjermani", value: settings.statsPartners },
             { label: "Vite përvojë", value: settings.statsYearsExperience },
           ].map((s, i) => (
-            <Reveal key={s.label} delay={0.1 * i} className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-md">
+            <Reveal
+              key={s.label}
+              delay={0.1 * i}
+              className="rounded-2xl border border-white/20 bg-black/25 p-5 backdrop-blur-md"
+            >
               <AnimatedCounter value={s.value} suffix="+" />
-              <p className="mt-2 flex items-center gap-2 text-sm text-white/85">
-                <CheckCircle2 className="h-4 w-4 text-[#06B6D4]" />
+              <p className="mt-2 flex items-center gap-2 text-sm font-medium text-white/90">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#06B6D4]" />
                 {s.label}
               </p>
             </Reveal>
@@ -97,12 +107,12 @@ export function Hero({
 
         <motion.div
           aria-hidden
-          className="pointer-events-none absolute right-8 top-36 hidden w-72 rounded-3xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl lg:block"
+          className="pointer-events-none absolute right-6 top-36 hidden w-72 rounded-3xl border border-white/20 bg-black/30 p-5 text-white backdrop-blur-xl lg:block xl:right-10"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <p className="text-xs font-semibold uppercase tracking-wider text-white/70">Proces transparent</p>
-          <p className="mt-2 text-sm text-white">Hap pas hapi — pa premtime boshe.</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Proces transparent</p>
+          <p className="mt-2 text-sm leading-relaxed text-white">Hap pas hapi — pa premtime boshe.</p>
         </motion.div>
       </div>
     </section>

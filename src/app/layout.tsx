@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
-import { Manrope, Playfair_Display, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope, Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { getValidUrl } from "@/lib/urls";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -48,10 +57,13 @@ export default function RootLayout({
   return (
     <html
       lang="sq"
-      className={`${manrope.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full scroll-smooth`}
+      className={`${inter.variable} ${manrope.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full antialiased" suppressHydrationWarning>
+      <body
+        className="min-h-full bg-white text-[#0F172A] antialiased [font-family:var(--font-body)]"
+        suppressHydrationWarning
+      >
         {children}
         <ChatWidget />
       </body>

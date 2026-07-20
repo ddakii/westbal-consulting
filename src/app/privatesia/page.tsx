@@ -1,6 +1,6 @@
 export default function PrivacyPage() {
   return (
-    <main className="container-luxury section-padding prose prose-slate max-w-3xl">
+    <main className="container-luxury section-padding page-prose">
       <h1>Politika e Privatësisë</h1>
       <p>
         Westbal Consulting mbledh të dhëna vetëm kur na kontaktoni vullnetarisht (formular, telefon, email ose chat).

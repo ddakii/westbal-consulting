@@ -9,7 +9,7 @@ export function ServicesSection({ services }: { services: Service[] }) {
     <section id="sherbimet" className="section-padding bg-white">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2563EB]">Shërbimet</p>
+          <p className="eyebrow">Shërbimet</p>
           <h2 className="heading-lg mt-3">Zgjidhje të plota për relokim në Gjermani</h2>
           <p className="body-lg mt-4">
             Nga CV-ja dhe intervista deri te vizë, leje qëndrimi dhe ndjekja e aplikimit — çdo shërbim është i strukturuar

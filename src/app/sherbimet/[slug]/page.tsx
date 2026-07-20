@@ -46,7 +46,7 @@ export default async function ServicePage({ params }: Props) {
       <Header settings={data.settings} />
       <main className="pt-24">
         <section className="relative overflow-hidden bg-[#0F172A] text-white">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/92 via-[#0F172A]/78 to-[#2563EB]/40" />
           <div className="container-luxury relative px-5 py-20 sm:px-8 lg:px-12">
             <Link href="/#sherbimet" className="inline-flex items-center gap-2 text-sm text-white/75 hover:text-white">
               <ArrowLeft className="h-4 w-4" /> Kthehu te shërbimet
@@ -56,8 +56,8 @@ export default async function ServicePage({ params }: Props) {
                 <Icon className="h-8 w-8" />
               </div>
               <div>
-                <h1 className="heading-lg text-white">{service.title}</h1>
-                <p className="mt-4 max-w-2xl text-lg text-white/80">{service.shortDescription}</p>
+                <h1 className="heading-lg hero-text">{service.title}</h1>
+                <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">{service.shortDescription}</p>
               </div>
             </div>
           </div>

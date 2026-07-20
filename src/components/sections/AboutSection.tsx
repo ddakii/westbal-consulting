@@ -7,7 +7,7 @@ export function AboutSection({ settings }: { settings: SiteSettings }) {
     <section id="rreth-nesh" className="section-padding bg-white">
       <div className="container-luxury grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2563EB]">Rreth nesh</p>
+          <p className="eyebrow">Rreth nesh</p>
           <h2 className="heading-lg mt-3">{settings.aboutTitle}</h2>
           <p className="body-lg mt-6 whitespace-pre-line">{settings.aboutBody}</p>
           <ul className="mt-8 space-y-3 text-[#334155]">

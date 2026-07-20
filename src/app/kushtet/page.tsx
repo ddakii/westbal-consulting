@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <main className="container-luxury section-padding prose prose-slate max-w-3xl">
+    <main className="container-luxury section-padding page-prose">
       <h1>Kushtet e Përdorimit</h1>
       <p>
         Informacioni në këtë faqe është orientues dhe nuk përbën këshillë ligjore. Westbal Consulting ofron shërbime
