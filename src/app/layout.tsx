@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, Playfair_Display, Space_Grotesk } from "next/font/google";
+import { Manrope, Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { getValidUrl } from "@/lib/urls";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -57,11 +52,11 @@ export default function RootLayout({
   return (
     <html
       lang="sq"
-      className={`${inter.variable} ${manrope.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full scroll-smooth`}
+      className={`${manrope.variable} ${playfair.variable} ${spaceGrotesk.variable} h-full scroll-smooth`}
       suppressHydrationWarning
     >
       <body
-        className="min-h-full bg-white text-[#0F172A] antialiased [font-family:var(--font-body)]"
+        className="min-h-full bg-white font-semibold text-[#0F172A] antialiased [font-family:var(--font-body)]"
         suppressHydrationWarning
       >
         {children}
