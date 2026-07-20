@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AdminUser {
+  id           String @id @default(cuid())
+  email        String @unique
+  passwordHash String
+}
+
+model SiteSettings {
+  id                        String  @id @default("default")
+  phone                     String  @default("+383 44 000 000")
+  email                     String  @default("info@westbalconsulting.com")
+  whatsapp                  String  @default("+383441234567")
+  address                   String  @default("Prishtinë, Kosovë")
+  officeHours               String  @default("E Hënë – E Premte: 09:00–18:00")
+  heroHeadline              String
+  heroSubtitle              String
+  heroImage                 String
+  heroVideo                 String?
+  aboutTitle                String
+  aboutBody                 String
+  aboutImage                String
+  statsSuccessfulCandidates Int     @default(850)
+  statsApprovedVisas        Int     @default(620)
+  statsPartners             Int     @default(45)
+  statsYearsExperience      Int     @default(8)
+  mapEmbedUrl               String?
+  seoTitle                  String
+  seoDescription            String
+  ogImage                   String?
+  primaryCtaLabel           String  @default("Rezervo Konsultim")
+  secondaryCtaLabel         String  @default("Na Telefono")
+}
+
+model Service {
+  id               String  @id @default(cuid())
+  slug             String  @unique
+  title            String
+  shortDescription String
+  icon             String
+  description      String
+  benefits         String
+  timeline         String
+  requirements     String
+  faqs             String
+  order            Int     @default(0)
+  published        Boolean @default(true)
+}
+
+model FAQ {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  order    Int    @default(0)
+}
+
+model Testimonial {
+  id      String @id @default(cuid())
+  name    String
+  country String
+  text    String
+  rating  Int    @default(5)
+  photo   String
+  order   Int    @default(0)
+}
+
+model Partner {
+  id      String  @id @default(cuid())
+  name    String
+  logoUrl String
+  website String?
+  order   Int     @default(0)
+}
+
+model WhyUsItem {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int    @default(0)
+}
+
+model ProcessStep {
+  id          String @id @default(cuid())
+  step        Int    @unique
+  title       String
+  description String
+}
+
+model KnowledgeEntry {
+  id         String   @id @default(cuid())
+  question   String
+  answer     String
+  keywords   String?
+  embedding  String?
+  source     String   @default("manual")
+  documentId String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model KnowledgeDocument {
+  id            String   @id @default(cuid())
+  filename      String
+  mimeType      String
+  filePath      String
+  extractedText String
+  createdAt     DateTime @default(now())
+}
+
+model Appointment {
+  id            String   @id @default(cuid())
+  name          String
+  phone         String
+  email         String
+  preferredDate String
+  preferredTime String
+  description   String
+  status        String   @default("new")
+  source        String   @default("chatbot")
+  createdAt     DateTime @default(now())
+}
+
+model JobOpening {
+  id           String  @id @default(cuid())
+  title        String
+  location     String
+  description  String
+  requirements String
+  published    Boolean @default(true)
+  createdAt    DateTime @default(now())
+}
