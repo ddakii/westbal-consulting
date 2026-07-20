@@ -11,7 +11,7 @@
   --color-gold: #c9a227;
   --color-success: #10b981;
   --font-body: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-heading: var(--font-playfair), "Playfair Display", ui-serif, serif;
   --font-ui: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-numbers: var(--font-space), "Space Grotesk", ui-sans-serif, sans-serif;
   --radius-xl: 1.25rem;
@@ -29,11 +29,23 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: 1rem;
+}
+
+/* Të gjithë teksti i trupit trashëgon Manrope nga layout.tsx */
+main,
+main p,
+main li,
+main span,
+main a,
+section p,
+section li,
+section span,
+label,
+input,
+textarea,
+select {
+  font-family: inherit;
   font-weight: 600;
-  line-height: 1.65;
-  letter-spacing: -0.015em;
 }
 
 ::selection {
@@ -95,14 +107,14 @@ body {
 }
 
 .body-lg {
-  font-family: var(--font-body);
+  font-family: inherit;
   font-weight: 600;
   letter-spacing: -0.012em;
   @apply text-base leading-[1.75] text-[#475569] md:text-lg md:leading-[1.7];
 }
 
 .body-sm {
-  font-family: var(--font-body);
+  font-family: inherit;
   font-weight: 600;
   @apply text-sm leading-relaxed text-[#64748B];
 }
@@ -171,7 +183,7 @@ body {
 }
 
 .page-prose {
-  font-family: var(--font-body);
+  font-family: inherit;
   font-weight: 600;
   @apply max-w-3xl text-[#475569];
 }

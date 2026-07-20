@@ -56,7 +56,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-full bg-white font-semibold text-[#0F172A] antialiased [font-family:var(--font-body)]"
+        className={`${manrope.className} min-h-full bg-white text-base font-semibold leading-relaxed tracking-tight text-[#0F172A] antialiased`}
         suppressHydrationWarning
       >
         {children}
