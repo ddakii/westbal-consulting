@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Playfair_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { getValidUrl } from "@/lib/urls";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -19,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://westbalconsulting.com"),
+  metadataBase: getValidUrl(process.env.NEXT_PUBLIC_SITE_URL),
   title: {
     default: "Westbal Consulting | Punësim dhe Vizë në Gjermani",
     template: "%s | Westbal Consulting",

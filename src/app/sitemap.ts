@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getSiteData } from "@/lib/data";
+import { getSiteOrigin } from "@/lib/urls";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://westbalconsulting.com";
+  const base = getSiteOrigin();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${base}/privatesia`, changeFrequency: "yearly", priority: 0.3 },

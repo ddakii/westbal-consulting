@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { getSiteData } from "@/lib/data";
 import { withAssetVersion } from "@/lib/asset-url";
+import { getSiteOrigin } from "@/lib/urls";
 import type { Metadata } from "next";
 
 /** Hero/imazhet lokale lexohen me version të freskët (mtime). */
@@ -44,7 +45,7 @@ export default async function HomePage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Westbal Consulting",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://westbalconsulting.com",
+    url: getSiteOrigin(),
     description: settings.seoDescription,
     areaServed: ["Albania", "Kosovo", "Germany"],
     telephone: settings.phone,

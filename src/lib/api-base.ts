@@ -1,8 +1,8 @@
+import { getOptionalApiOrigin, getSiteOrigin } from "@/lib/urls";
+
 /** Remote backend (Railway) when frontend is on Netlify. Empty = same origin. */
 export function getApiBaseUrl(): string {
-  const base = process.env.NEXT_PUBLIC_API_URL?.trim();
-  if (!base) return "";
-  return base.replace(/\/$/, "");
+  return getOptionalApiOrigin();
 }
 
 /** Browser / client — relative path is OK when same origin. */
@@ -19,8 +19,7 @@ export function serverFetchUrl(path: string): string {
   if (base) return `${base}${normalized}`;
 
   const origin =
-    process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "") ||
-    `http://127.0.0.1:${process.env.PORT || 3000}`;
+    getSiteOrigin() || `http://127.0.0.1:${process.env.PORT || 3000}`;
 
   return `${origin}${normalized}`;
 }
