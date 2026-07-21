@@ -8,7 +8,7 @@ export function Footer({ settings, services }: { settings: SiteSettings; service
       <div className="container-luxury grid gap-10 px-5 py-16 sm:px-8 lg:grid-cols-4 lg:px-12">
         <div>
           <Link href="/" className="inline-flex items-center gap-3" aria-label="Westbal Consulting">
-            <LogoMark variant="dark" size={40} />
+            <LogoMark layout="full" variant="dark" size={36} className="max-w-[280px]" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-[#64748B]">
             Konsultim premium për punësim, vizë dhe leje qëndrimi në Gjermani.

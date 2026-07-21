@@ -35,10 +35,11 @@ export function Header({ settings }: { settings: SiteSettings }) {
       <div className="container-luxury flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <Link href="/" className="group flex items-center gap-2.5" aria-label="Westbal Consulting — Ballina">
           <LogoMark
+            layout="full"
             variant={scrolled ? "dark" : "light"}
-            size={44}
+            size={40}
             priority
-            className="transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-9 w-auto max-w-[min(100vw-8rem,320px)] transition-transform duration-300 group-hover:scale-[1.02] sm:h-10"
           />
         </Link>
 

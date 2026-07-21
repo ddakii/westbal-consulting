@@ -1,31 +1,35 @@
 import Image from "next/image";
 
-/** Trimmed asset dimensions (westbal-mark-*.png). */
-const MARK_WIDTH = 184;
-const MARK_HEIGHT = 145;
+const SIZES = {
+  mark: { w: 184, h: 145 },
+  full: { w: 890, h: 146 },
+} as const;
 
 type Props = {
-  /** Light mark (white) for dark backgrounds; dark mark for light backgrounds */
+  /** Icon only, or full wordmark (W + text + flag) */
+  layout?: keyof typeof SIZES;
+  /** Light for dark backgrounds; dark for light backgrounds */
   variant?: "light" | "dark";
   className?: string;
-  /** Display height in px; width follows mark aspect ratio */
+  /** Display height in px */
   size?: number;
   priority?: boolean;
 };
 
 export function LogoMark({
+  layout = "full",
   variant = "dark",
   className = "",
   size = 40,
   priority = false,
 }: Props) {
-  const src =
-    variant === "light"
-      ? "/brand/westbal-mark-light.png"
-      : "/brand/westbal-mark-dark.png";
+  const tone = variant === "light" ? "light" : "dark";
+  const base = layout === "full" ? "westbal-logo" : "westbal-mark";
+  const src = `/brand/${base}-${tone}.png`;
 
+  const dims = SIZES[layout];
   const height = size;
-  const width = Math.round((MARK_WIDTH / MARK_HEIGHT) * height);
+  const width = Math.round((dims.w / dims.h) * height);
 
   return (
     <Image
