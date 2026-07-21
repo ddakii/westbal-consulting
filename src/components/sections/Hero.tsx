@@ -99,15 +99,6 @@ export function Hero({
           ))}
         </div>
 
-        <motion.div
-          aria-hidden
-          className="pointer-events-none absolute right-6 top-36 hidden w-72 rounded-3xl border border-white/20 bg-black/30 p-5 text-white backdrop-blur-xl lg:block xl:right-10"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Proces transparent</p>
-          <p className="mt-2 text-sm leading-relaxed text-white">Hap pas hapi — pa premtime boshe.</p>
-        </motion.div>
       </div>
     </section>
   );
