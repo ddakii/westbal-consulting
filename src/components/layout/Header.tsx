@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import type { SiteSettings } from "@/generated/prisma/client";
+import { LogoMark } from "@/components/brand/LogoMark";
 
 const links = [
   { href: "#ballina", label: "Ballina" },
@@ -32,16 +33,13 @@ export function Header({ settings }: { settings: SiteSettings }) {
       transition={{ duration: 0.6 }}
     >
       <div className="container-luxury flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl gradient-primary text-sm font-bold text-white shadow-lg">
-            W
-          </span>
-          <div className="leading-tight">
-            <p className={`text-sm font-semibold tracking-wide ${scrolled ? "text-[#0F172A]" : "text-white"}`}>
-              Westbal
-            </p>
-            <p className={`text-xs ${scrolled ? "text-[#64748B]" : "text-white/80"}`}>Consulting</p>
-          </div>
+        <Link href="/" className="group flex items-center gap-2.5" aria-label="Westbal Consulting — Ballina">
+          <LogoMark
+            variant={scrolled ? "dark" : "light"}
+            size={44}
+            priority
+            className="transition-transform duration-300 group-hover:scale-[1.03]"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

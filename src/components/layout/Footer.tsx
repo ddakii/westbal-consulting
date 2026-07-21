@@ -1,13 +1,16 @@
 import Link from "next/link";
 import type { Service, SiteSettings } from "@/generated/prisma/client";
+import { LogoMark } from "@/components/brand/LogoMark";
 
 export function Footer({ settings, services }: { settings: SiteSettings; services: Service[] }) {
   return (
     <footer className="border-t border-[#E2E8F0] bg-white">
       <div className="container-luxury grid gap-10 px-5 py-16 sm:px-8 lg:grid-cols-4 lg:px-12">
         <div>
-          <p className="text-lg font-semibold">Westbal Consulting</p>
-          <p className="mt-3 text-sm leading-relaxed text-[#64748B]">
+          <Link href="/" className="inline-flex items-center gap-3" aria-label="Westbal Consulting">
+            <LogoMark variant="dark" size={40} />
+          </Link>
+          <p className="mt-4 text-sm leading-relaxed text-[#64748B]">
             Konsultim premium për punësim, vizë dhe leje qëndrimi në Gjermani.
           </p>
         </div>
