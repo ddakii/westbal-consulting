@@ -57,12 +57,6 @@ export function Hero({
 
       <div className="container-luxury relative z-10 flex min-h-[100svh] flex-col justify-center px-5 pb-24 pt-32 sm:px-8 lg:px-12">
         <div className="relative max-w-3xl">
-          <Reveal>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
-              <span className="h-2 w-2 rounded-full bg-[#10B981]" />
-              Konsultim relokimi · Gjermani
-            </p>
-          </Reveal>
           <Reveal delay={0.05}>
             <h1 className="heading-xl hero-text">{settings.heroHeadline}</h1>
           </Reveal>
